@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;700;900&display=swap');
+
+:root {
+    --primary: #0055aa;
+    /* ITEMのロゴ色をイメージ（ライトブルー） */
+    --primary-light: #e6f0ff;
+    --accent: #f08600;
+    /* オレンジ（ロゴアクセント） */
+    --accent-light: #fffae6;
+    --text-main: #222222;
+    --text-muted: #666666;
+    --bg-main: #f4f7f9;
+    --white: #ffffff;
+    --radius: 12px;
+    --shadow: 0 10px 30px rgba(0, 85, 170, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-main);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    opacity: 0;
+}
+
+header {
+    text-align: center;
+    padding: 40px 0 30px;
+}
+
+.logo-container {
+    margin-bottom: 25px;
+}
+
+.logo-main {
+    width: 440px;
+    /* 以前の220pxからさらに2倍（440px）に拡大 */
+    height: auto;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--primary);
+    color: var(--white);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+section {
+    background: var(--white);
+    padding: 25px;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+}
+
+h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+h2::before {
+    content: "";
+    width: 4px;
+    height: 18px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+/* 4ステップ */
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.step-card {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    background: var(--bg-main);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.step-num {
+    background: var(--primary);
+    color: var(--white);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.step-content h3 {
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.step-content p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* ビジュアル版特有 */
+.visual-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.visual-step-card {
+    text-align: center;
+}
+
+.visual-step-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* 景品 */
+.prize-card {
+    text-align: center;
+    position: relative;
+    background: var(--accent-light);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.prize-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #ff0000;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 900;
+    font-size: 0.75rem;
+    transform: rotate(10deg);
+}
+
+.prize-image {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.prize-info {
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
+.prize-image-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.design-pending-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 900;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    pointer-events: none;
+    border: 2px solid white;
+}
+
+/* 汎用 */
+.btn {
+    display: block;
+    width: 100%;
+    background: var(--accent);
+    color: var(--white);
+    text-align: center;
+    padding: 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 30px;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background: #e07b00;
+}
+
+.animate {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.note-list {
+    list-style: none;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.note-list li {
+    padding-left: 15px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.note-list li::before {
+    content: "※";
+    position: absolute;
+    left: 0;
+}
+
+.underline {
+    text-decoration: underline;
+}
